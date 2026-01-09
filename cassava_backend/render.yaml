@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: cassava-backend
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn cassava_backend.wsgi:application
