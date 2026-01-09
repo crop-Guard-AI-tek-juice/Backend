@@ -5,12 +5,14 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render
+from django.conf import settings
 import tensorflow as tf
 import numpy as np
 import os
 
 # Load model once 
-MODEL_PATH = "C:/Users/RA_CT/Desktop/Tek_Juice/Backend/cassava_backend/api/assets/cassava_model_v3.h5"
+# MODEL_PATH = "C:/Users/RA_CT/Desktop/Tek_Juice/Backend/cassava_backend/api/assets/cassava_model_v3.h5"
+MODEL_PATH = os.path.join(settings.BASE_DIR, "api", "model", "cassava_model.h5")
 model = load_model(MODEL_PATH)
 
 # Map model output to disease names
