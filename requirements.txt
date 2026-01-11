@@ -44,3 +44,4 @@ werkzeug==3.1.5; python_version >= '3.9'
 wheel==0.45.1; python_version >= '3.8'
 wrapt==2.0.1; python_version >= '3.8'
 gunicorn
+google-generativeai
