@@ -84,3 +84,22 @@ def predict_form_view(request):
         os.remove(img_path)
 
     return render(request, "upload.html", {"prediction": prediction})
+
+
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .services.api_service import generate_disease_advice
+
+@api_view(["POST"])
+def disease_advice(request):
+    disease = request.data.get("disease")
+
+    if not disease:
+        return Response({"error": "Disease name is required"}, status=400)
+
+    advice = generate_disease_advice(disease)
+
+    return Response({
+        "disease": disease,
+        "advice": advice
+    })

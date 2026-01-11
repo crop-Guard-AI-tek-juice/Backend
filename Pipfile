@@ -9,6 +9,7 @@ djangorestframework = "*"
 pillow = "*"
 tensorflow = "*"
 django-cors-headers = "*"
+google-generativeai = "*"
 
 [dev-packages]
 
