@@ -12,7 +12,7 @@ import os
 
 # Load model once 
 # MODEL_PATH = "C:/Users/RA_CT/Desktop/Tek_Juice/Backend/cassava_backend/api/assets/cassava_model_v3.h5"
-MODEL_PATH = os.path.join(settings.BASE_DIR, "api", "model", "cassava_model.h5")
+MODEL_PATH = os.path.join(settings.BASE_DIR, "api", "model", "cassava_model_v3.h5")
 model = load_model(MODEL_PATH)
 
 # Map model output to disease names
